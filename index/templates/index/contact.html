@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} MakArtistry {% endblock %}
+
+{%block head%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="sucMsgAlert">
+                <span class="clsMsg" onclick="this.parentElement.style.display='none';">&times;</span>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="content">
+
+        <div class="header">
+
+            <div class="headerContent">
+
+                <div class="headerContentWriteUp">
+
+                    <div class="headerContentWriteUpInner">
+
+                        <p>
+                            C<span>ONT</span><br>
+                            A<span>CT</span><br>
+                            U<span>S</span>
+                        </p>
+
+                        <p>We are here to connect...</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <form id="contactForm" method="post">
+
+        {% csrf_token %}
+            <div class="formInputs">
+                <input type="text" placeholder="Name:" name="name">
+
+                <input type="email" placeholder="Email Address:" name="email_address">
+                
+                <select id="category" name="category">
+                    <option value="Category">category</option>
+                    <option value="Inquiry">Inquiry</option>
+                    <option value="Custom Order">Custom Order</option>
+                    <option value="Partnership">Partnership/Collaboration</option>
+                </select>
+
+                <input type="text" placeholder="Subject:" name="subject">
+            </div>
+
+            <div class="formWriteUp">
+                <textarea placeholder="Type your message here..." name="message"></textarea>
+                <div class="attachmentContainer">
+                    <label for="attachment">Upload File Here <img src="{% static 'img/attach.svg' %}" alt="attach">
+                    </label>
+                    <input type="file" name="uploadfile" id="attachment" style="display:none;"/>
+                </div>
+            </div>
+
+            <button type="submit" class="button" style="letter-spacing: 0.1em;">SEND MESSAGE</button>
+
+        </form>
+
+        <div class="socialLinks">
+            <a href="tel:+2347089313815"><img src="{% static 'img/phoneContact.svg' %}" alt="logo"></a>
+            <a href="https://wa.me/message/JPDBGDSQXDSBF1"><img src="{% static 'img/whatsappContact.svg' %}" alt="logo"></a>
+            <a href="https://www.instagram.com/p/CPp_unolMop/?utm_medium=copy_link"><img src="{% static 'img/instagramContact.svg' %}" alt="logo"></a>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} MakArtistry {% endblock %}
+
+{%block head%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/portfolio.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/portfolioDetails.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class='filterGroup'>
+        <label for="filter">
+            <div class="filterBtn">Filter by <img src="{% static 'img/filter.svg' %}" alt="filter"></div>
+        </label>
+
+        <select id="filter" name="filter">
+            <option value="Show All">Show All</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Branded">Branded</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Christmas">Christmas</option>
+            <option value="Customized">Customized</option>
+        </select>
+    </div>
+
+    <div class="swiper topContent ">
+
+        <!-- <div class="directions" onclick="plusSlides(-1)">←</div> -->
+
+        <div class="swiper-wrapper itemDetailSlideContainer">
+            {% if card_list %}
+                <div class="swiper-slide itemDetailsContainer mySlides">
+                    <div class="imageBox">
+                        <img class="itemImage item1" src="{{card.display_Img.url}}" alt="{{ card.name }}">
+                        <img class="itemImage item2" src="{{card.display_ImgTop.url}}" alt="{{ card.name }}">
+                        <img class="itemImage item3" src="{{card.display_ImgRight.url}}" alt="{{ card.name }}">
+                        <img class="itemImage item4" src="{{card.display_ImgLeft.url}}" alt="{{ card.name }}">
+                        <img class="itemImage item5" src="{{card.display_ImgRear.url}}" alt="{{ card.name }}">
+                    </div>
+
+                    <div class="itemDescription">
+
+                        <div id="size">
+                            <span>Size: </span>
+                            {{ card.size }}
+                        </div>
+
+                        <div id="color">
+                            <span>Color: </span>
+                            {{ card.color }}
+                        </div>
+
+                        <div id="category">
+                            <span>Category: </span>
+                            {{ card.category }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- <div class="directions" onclick="plusSlides(1)">→</div> -->
+    </div>
+
+    <div class="content">
+        <div class="collections">
+            <p>Related Searches</p>
+
+            <div class="collectionItems">
+                {% for card in card_list %}
+                    <a href="{% url 'portfolio:card'  card.id %}">
+                        <img src="{{card.display_Img.url}}" alt="{{ card.name }}">
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block bottomScript %}
+    <script src="{% static 'scripts/portDetailWeb.js' %}"></script>
+    <script src="{% static 'scripts/portLoopCarousel.js' %}"></script>
+{% endblock %}

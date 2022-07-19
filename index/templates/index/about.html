@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} MakArtistry {% endblock %}
+
+{%block head%}
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="header">
+
+            <div class="headerContent">
+
+                <div class="headerContentWriteUp">
+                    <div class="headerContentWriteUpInner">
+                        <p>
+                           A<span>BO</span><br>
+                           U<span>T</span><br>
+                           U<span>S</span>
+                        </p>
+                        <p>What we are all about</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="whoWeAre">
+        <p class="title">Who we are</p>
+
+        <p class="writeUp">
+            Mak Artistry is a creative lifestyle brand, creating everyday art that interacts with you. We help brands, individuals and groups communicate their identity, ideas and culture through our products and services.
+            <br>
+            From the heart of Lagos, Nigeria.
+
+        </p>
+    </div>
+
+    <div class="content">
+
+        <div class="whatWeDo1">
+            <p class="title" id="whatWeDo1Title">What we do</p>
+
+            <hr class="sectionLine">
+
+            <div class="whatWeDo1Details">
+
+                <div>
+                    <img src="{% static 'img/box.svg' %}" alt="whatWeDo">
+                    <p>Boxes & Packaging</p>
+                    <p class="writeUp">Packaging can be theater, it can create a story. We design and produce a range of paper
+                         packaging from boxes to paper packets.
+</p>
+                </div>
+
+                <div>
+                    <img src="{% static 'img/book_1.svg' %}" alt="whatWeDo">
+                    <p>Notepads & Journals</p>
+                    <p class="writeUp">Sometimes only paper will listen to you… We produce journals and notepads for all your needs;
+                         custom notepad as gifts and souvenirs.
+</p>
+                </div>
+
+                <div>
+                    <img src="{% static 'img/hello.svg' %}" alt="whatWeDo">
+                    <p>Cards & Prints</p>
+                    <p class="writeUp">Be your own kind of beautiful. Express yourself to others with the most heartfelt of cards
+                        and high quality prints. We create gift, menu, invitation, & custom cards.
+</p>
+                </div>
+
+                <div class="whatWeDo1DetailsSpecial">
+                    <img src="{% static 'img/face.svg' %}" alt="whatWeDo">
+                    <p>Digital Arts & Illustration</p>
+                    <p class="writeUp">Drawing is not what one sees but what one can make others see.
+                        A digitally curated version of a photograph or concept; creates a story for others to experience. </p>
+                </div>
+
+            </div>
+        </div>
+
+   </div>
+
+    <div class="whatWeDo2">
+
+        <p class="title" id="whatWeDo2Title">Why we do it</p>
+
+        <div class="whatWeDoContent">
+
+            <div class="whatWeDo2WriteUp">
+                <p class="writeUp">
+                    We were borne out of the need to create everyday art that will interact with you. Our daily lives are filled with seemingly mundane things that we may not think twice about. We Provide the opportunity for life to be lived in color, creating new experiences and rewriting what we know art to be.
+                    <br> <br>
+
+                    We consistently create pieces, that are tailored to our clients needs. We are highly resourceful and innovative.
+                    <br> <br>
+                    
+                    To contribute to the sales growth of a brand, or help transform someones lifestyle is what we are all about. From businesses to organisations, individuals, brands and events; we can cater to your needs.
+                    <br> <br>
+                    
+                    Value is demanded, not just in our products but in the lives of those who make them. People are at the core of who we are... <b style="font-weight:bold">Every Day Art that interacts with you.</b>
+
+                </p>
+            </div>
+
+            <div class="whatWeDo2Images">
+                <img src="{% static 'img/Picture11.jpg' %}" alt="whatWeDo">
+                <img src="{% static 'img/Picture8.jpg' %}" alt="whatWeDo">
+                <img src="{% static 'img/Picture12.jpg' %}" alt="whatWeDo">
+                <img src="{% static 'img/Picture13.jpg' %}" alt="whatWeDo">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="team">
+
+        <p class="title" id="teamTitle">Meet the Team</p>
+
+        <hr class="sectionLine">
+
+        <div class="profileDetailsContainer">
+
+            <div class="profileDetails">
+                <img src="{% static 'img/Picture14.jpg' %}" alt="team">
+                <p>Mosopefoluwa Kara</p>
+                <p class="writeUp" style="color:#222121">Founder / Head Designer</p>
+            </div>
+
+            <div class="profileDetails">
+                <img src="{% static 'img/Picture15.jpg' %}" alt="team">
+                <p>Adama Shehu</p>
+                <p class="writeUp" style="color:#222121">Media Strategist</p>
+            </div>
+
+            <div class="profileDetails">
+                <img src="{% static 'img/Picture16.jpg' %}" alt="team">
+                <p>Adeoti Salami</p>
+                <p class="writeUp" style="color:#222121">Graphics Designer</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="clients swiper">
+        <p class="title">Our Clients</p>
+        <div class="swiper-wrapper clientIcons">
+            <div class="swiper-slide"><img id="clientIcon1" src="{% static 'img/deola.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon2" src="{% static 'img/uac.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon3" src="{% static 'img/clan.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon4" src="{% static 'img/shyft.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon5" src="{% static 'img/baloon.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon6" src="{% static 'img/piggytech.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon7" src="{% static 'img/orange.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon8" src="{% static 'img/portland.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon9" src="{% static 'img/cap.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon10" src="{% static 'img/adeaux.png' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon11" src="{% static 'img/ReneeLogo.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon12" src="{% static 'img/ibbystyles.PNG' %}" alt="clientIcon"></div>
+        </div>
+        <div class="swiper-button-next" id="swiper-button-next"></div>
+        <div class="swiper-button-prev" id="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="content">
+        <p class="title" id="hireUsToday">HIRE US TODAY !</p>
+
+        <a href="{% url 'index:contact' %}"><div class="button contactUsBtn">CONTACT US</div></a>
+    </div>
+{% endblock %}
+
+{% block bottomScript %}
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="{% static 'scripts/swiper.js' %}"></script>
+{% endblock %}

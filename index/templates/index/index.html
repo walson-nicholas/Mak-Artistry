@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} MakArtistry - Everyday Art {% endblock %}
+
+{%block head%}
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+
+        <div class="indexHeader">
+
+            <div class="indexHeaderContent">
+                <p>
+                    E<span class="spanSpecial">V</span><span>ERY</span> <br>
+                    D<span class="spanSpecial">A</span><span>Y</span> <br>
+                    A<span class="spanSpecial">R</span><span>T</span>
+                </p>
+
+                <p class="writeUp">
+                    Mak Artistry is the creative lifestyle brand you need to recreate your experiences. We create everyday art that interacts with you; for your brand, events and lifestyle.
+                </p>
+
+                <a href="{% url 'portfolio:portfolio' %}"><div class="button">EXPLORE</div></a>
+            </div>
+        </div>
+
+        <div class="valuesContainer">
+            <div class="values">
+                <img src="{% static 'img/diamond.svg' %}" alt="valueIcon">
+                <p class="title2">Quality</p>
+                <p class="writeUp">Quality is not an act, it is our habit</p>
+            </div>
+
+            <div class="values">
+                <img src="{% static 'img/settings.svg' %}" alt="valueIcon">
+                <p class="title2">Custom Made</p>
+                <p class="writeUp">One of a kind; Get it how you want custom products</p>
+            </div>
+
+            <div class="values">
+                <img src="{% static 'img/bulb.svg' %}" alt="valueIcon">
+                <p class="title2">Creativity</p>
+                <p class="writeUp">More than just being different; we’re creative</p>
+            </div>
+        </div>
+
+        <div class="whatsNewContainer">
+            {% for new in news %}
+                <div class="whatsNewSlide displayRow">
+                    <img src="{{new.display_Img.url}}" class="bigImages" alt="whatsNew">
+                    <div class="displayRowWriteUp">
+                        <p class="title">What’s New?</p>
+                        <p class="writeUp">{{ new.writeUp }}</p>
+                        <a href="https://flutterwave.com/store/makartistry"><div class="button">SHOP NOW</div></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="customiseOrder">
+        <p class="title">Customise Your Order in 3 Easy Steps</p>
+
+        <div class="graphicRow">
+            <div class="cycles">1</div>
+            <hr>
+            <div class="cycles">2</div>
+            <hr>
+            <div class="cycles">3</div>
+        </div>
+
+        <div class="writeUpRow">
+            <p class="writeUp customiseWriteUp">Select your product</p>
+            <p class="writeUp customiseWriteUp">Customise it</p>
+            <p class="writeUp customiseWriteUp">Place your order</p>
+        </div>
+
+        <div class="button">START NOW</div>
+    </div>
+
+    <div class="content">
+        {% for activity in activities %}
+            <div class="displayRow displayRow2">
+                <img src="{{activity.display_Img.url}}" class="bigImages" alt="whatsNew">
+                <div class="displayRowWriteUp">
+                    <p class="title">What We Do</p>
+                    <p class="writeUp">{{ activity.writeUp }}</p>
+                    <a href="{% url 'index:about' %}"><div class="button">LEARN MORE</div></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="clients swiper">
+        <p class="title">Our Clients</p>
+        <div class="swiper-wrapper clientIcons">
+            <div class="swiper-slide"><img id="clientIcon1" src="{% static 'img/deola.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon2" src="{% static 'img/uac.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon3" src="{% static 'img/clan.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon4" src="{% static 'img/shyft.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon5" src="{% static 'img/baloon.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon6" src="{% static 'img/piggytech.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon7" src="{% static 'img/orange.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon8" src="{% static 'img/portland.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon9" src="{% static 'img/cap.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon10" src="{% static 'img/adeaux.png' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon11" src="{% static 'img/ReneeLogo.PNG' %}" alt="clientIcon"></div>
+            <div class="swiper-slide"><img id="clientIcon12" src="{% static 'img/ibbystyles.PNG' %}" alt="clientIcon"></div>
+        </div>
+        <div class="swiper-button-next" id="swiper-button-next"></div>
+        <div class="swiper-button-prev" id="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="content">
+
+        <p class="title" id="customerReviewTitle">What Our Customers say</p>
+
+        <div class="customerReview">
+
+            <div class="reviewImages">
+                <img class="img-review" src="{% static 'img/review1.jpg' %}" alt="revImg">
+                <img class="img-review" src="{% static 'img/review2.jpg' %}" alt="revImg">
+                <img class="img-review" src="{% static 'img/Picture3.jpg' %}" alt="revImg">
+                <img class="img-review" src="{% static 'img/Picture4.jpg' %}" alt="revImg">
+                <img class="img-review" id="lastImage" src="{% static 'img/review1.jpg' %}" alt="revImg">
+            </div>
+
+            <div class="reviewWriteUps">
+                <div class="reviewWriteUp" style="display: none;">
+
+                    <pre>“</pre>
+                    <p>
+                        Your designs are classic, timeless and detailed in a way that makes me want to come keep coming back for more. Illustrations, journals, boxes… I am always impressed.
+                    </p>
+                    <pre>’’</pre>
+
+                    <p class="reviewerName">Chisom Ogbummuo</p>
+                    <p class="reviewerPosition">Founder Theconversationcafe</p>
+                </div>
+                <div class="reviewWriteUp" style="display:none">
+
+                    <pre>“</pre>
+                    <p>
+                        When it comes to beautiful arts and crafts, you don't need to look elsewhere; Mak Artistry is the plug
+                    </p>
+                    <pre>’’</pre>
+
+                    <p class="reviewerName">Femi Ogunbambo</p>
+                    <p class="reviewerPosition">CEO Prime  Experience</p>
+                </div>
+                <div class="reviewWriteUp" style="display:none">
+
+                    <pre>“</pre>
+                    <p>
+                        It was a pleasure knowing you
+                    </p>
+                    <pre>’’</pre>
+
+                    <p class="reviewerName">Asimiea Nicholas</p>
+                    <p class="reviewerPosition">Creator</p>
+                </div>
+                <div class="reviewWriteUp" style="display:none">
+
+                    <pre>“</pre>
+                    <p>
+                        My name is Walson
+                    </p>
+                    <pre>’’</pre>
+
+                    <p class="reviewerName">Bolade Tejuosho</p>
+                    <p class="reviewerPosition">C.E.O Iya alaje</p>
+                </div>
+                <div class="reviewWriteUp">
+
+                    <pre>“</pre>
+                    <p>
+                       Your designs are classic, timeless and detailed in a way that makes me want to come keep coming back for more. Illustrations, journals, boxes… I am always impressed.
+                    <pre>’’</pre>
+
+                    <p class="reviewerName">Chisom Ogbummuo</p>
+                    <p class="reviewerPosition">Founder Theconversationcafe</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block bottomScript %}
+    <script src="{% static 'scripts/whatsNewCarousel.js' %}"></script>
+    <script src="{% static 'scripts/reviewCarousel.js' %}"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="{% static 'scripts/swiper.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'img/webTabLogo.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'scripts/base.js' %}"></script>
+    {% block head %} {% endblock %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
+</head>
+<body>
+
+    <div class="topRow">
+
+        <input type="checkbox" class="toggler">
+
+        <div id="burger">
+            <div class="burgerLine"></div>
+        </div>
+
+        <img id="logo" src="{% static 'img/logo.PNG' %}" alt="logo">
+
+        <ul class="navLinks" id="nav">
+            <li> <a href="{% url 'index:index' %}" class="active">Home</a> </li>
+            <li> <a href="https://flutterwave.com/store/makartistry">Shop</a> </li>
+            <li> <a href="{% url 'portfolio:portfolio' %}">Portfolio</a> </li>
+            <li> <a href="https://link.medium.com/YtNyQaSe9hb">Blog</a> </li>
+            <li> <a href="{% url 'index:about' %}">About US</a> </li>
+            <li> <a href="{% url 'index:contact' %}">Contact</a> </li>
+        </ul>
+
+        <div class="navIcons">
+            <a href="#"><i class="fas fa-shopping-cart" id="shopIcon"></i></a>
+
+            <a class="secondNavIcon" href="#"><i class="fas fa-search" id="searchIcon"></i></a>
+
+            <form method=POST action="{% url 'portfolio:search-results' %}" id="searchBar">
+                {% csrf_token %}
+                <input type="text" placeholder="Search" name="searched" id="searchBarInput">
+                <button type="submit" id="searchBarSubmit">GO</button>
+            </form>
+
+        </div>
+    </div>
+
+    {% block content %} {% endblock %}
+
+    <div class="footer">
+        <div class="reachOut">
+            <p>Be the first to know !</p>
+
+            <form action="">
+                <input type="email" placeholder="Email address">
+                <button type="button">SIGN UP</button>
+            </form>
+
+            <div class="reachOutLinks">
+                <a href="https://www.instagram.com/p/CPp_unolMop/?utm_medium=copy_link"><img src="{% static 'img/instagram.svg' %}" alt="logo"></a>
+                <a href="https://twitter.com/mak_artistry/status/1406933417858682882?s=21"><img src="{% static 'img/twitter.svg' %}" alt="logo"></a>
+                <a href="#"><img src="{% static 'img/pinterest.svg' %}" alt="logo"></a>
+                <a href="http://linkedin.com/in/mosopefoluwa-kara-b438b5127"><img src="{% static 'img/linkedin.svg' %}" alt="logo"></a>
+                <a href="https://www.facebook.com/108144030778915/posts/160544135538904/?d=n"><img src="{% static 'img/facebook.svg' %}" alt="logo"></a>
+                <a href="https://wa.me/message/JPDBGDSQXDSBF1"><img src="{% static 'img/whatsapp.svg' %}" alt="logo"></a>
+                <a href="https://goo.gl/maps/cyj7oS2Trk82XVSs8"><img src="{% static 'img/location.svg' %}" alt="logo"></a>
+                <a href="tel:+2347089313815"><img src="{% static 'img/phone.svg' %}" alt="logo"></a>
+                <a href="mailto:Hello@makartistry"><img src="{% static 'img/email.svg' %}" alt="logo"></a>
+            </div>
+
+        </div>
+
+        <div class="footNav">
+            <a href="https://flutterwave.com/store/makartistry">•  Shop</a>
+            <a href="{% url 'index:about' %}">•  About us</a>
+            <a href="{% url 'index:contact' %}">•  Custom Orders</a>
+            <a href="https://link.medium.com/YtNyQaSe9hb">•  Return policy</a>
+            <a href="{% url 'portfolio:portfolio' %}">•  Gallery</a>
+            <a href="{% url 'index:contact' %}">•  Contact us</a>
+            <a href="{% url 'index:contact' %}">•  Work with us</a>
+            <a href="https://link.medium.com/YtNyQaSe9hb">•  Terms of service</a>
+            <a href="{% url 'index:about' %}">•  what we do</a>
+            <a href="https://link.medium.com/YtNyQaSe9hb">•  FAQ’s</a>
+            <a href="{% url 'index:contact' %}">•  Make enquires</a>
+        </div>
+    </div>
+
+    {% block bottomScript %} {% endblock %}
+
+</body>
+</html>

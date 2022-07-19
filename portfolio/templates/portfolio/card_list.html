@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} MakArtistry {% endblock %}
+
+{%block head%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/portfolioCards.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+
+        <div class="header">
+
+            <div class="headerContent">
+
+                <div class="headerContentWriteUp">
+                    <div class="headerContentWriteUpInner">
+                        <p>
+                            C<span>ARDS</span><br>
+                            &<span>PRI</span><br>
+                            N<span>TS</span></p>
+                        <p>cards & prints for all occasions...</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="collections">
+            <div class='filterGroup'>
+                <label for="filter">
+                    <div class="filterBtn">Filter by <img src="{% static 'img/filter.svg' %}" alt="filter"></div>
+                </label>
+    
+                <select id="filter" name="filter">
+                    <option value="Show All">Show All</option>
+                    <option value="Wedding">Wedding</option>
+                    <option value="Branded">Branded</option>
+                    <option value="Birthday">Birthday</option>
+                    <option value="Christmas">Christmas</option>
+                    <option value="Customized">Customized</option>
+                </select>
+            </div>
+
+            <div class="collectionItems">
+                {% if card_list %}
+                    {% for card in card_list %}
+                        <a href="{% url 'portfolio:card'  card.id %}">
+                            <img src="{{card.display_Img.url}}" alt="{{ card.name }}">
+                        </a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

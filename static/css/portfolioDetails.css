@@ -1,0 +1,217 @@
+.filterGroup{
+    margin-top: 5.556vw;
+    position: relative;
+    top: 3.19vw;
+    right: 7vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#filter{
+    padding-top: 0.5vw;
+}
+
+.topContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9vw 11.805vw 0;
+    justify-content: center;
+}
+
+.directions{
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background: rgba(124, 124, 124, 0.5);
+    color: white;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 13vw;
+}
+
+.directions:hover{
+    background: #F3CCCC;
+    cursor: pointer;
+}
+
+.itemDetailSlideContainer .itemDetailsContainer .imageBox{
+    display: grid;
+    width: 100%;
+    grid-template-areas: 
+        'item2 item1'
+        'item3 item1'
+        'item4 item1'
+        'item5 item1'
+    ;
+    grid-gap: 1.388vw;
+}
+
+.itemDetailSlideContainer .itemDetailsContainer .imageBox img{
+    width: 7.764vw;
+    height: 7.764vw;
+    border-radius: 0.417vw;
+    object-fit: cover;
+}
+
+.itemDetailSlideContainer .itemDetailsContainer .imageBox .item1 {
+    grid-area: item1;
+    height: 35.5vw;
+    width: 41.667vw;
+    border-radius: 0.347vw;
+    object-fit: cover;
+}
+
+.itemDetailSlideContainer .itemDetailsContainer .imageBox .item2{
+    grid-area: item2;
+}
+
+.itemDetailSlideContainer .itemDetailsContainer .imageBox .item3 {
+    grid-area: item3;
+}
+
+.itemDetailSlideContainer .itemDetailsContainer .imageBox .item4 {
+    grid-area: item4;
+}
+
+.itemDetailSlideContainer .itemDetailsContainer .imageBox .item5 {
+    grid-area: item5;
+}
+
+.itemDetailSlideContainer .itemDetailsContainer .itemDescription{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4.167vw;
+    margin-bottom: 8.056vw;
+    color: #767676;
+    font-size: 1.111vw;
+    line-height: 2.083vw;
+}
+
+.itemDetailSlideContainer .itemDetailsContainer .itemDescription div{
+    width: fit-content;
+}
+
+.collections{
+    font-size: 1.667vw;
+    line-height: 5.556vw;
+    margin-bottom: 13.89vw;
+}
+
+
+/* MOBILE VIEW */
+
+@media only screen and (max-width: 600px) {
+    
+    .filterGroup{
+        margin-top: 24vw;
+        top: 0vw;
+        right: 8vw;
+    }
+    
+    .filterGroup .filterBtn{
+        font-weight: bold;
+        font-size: 3.2vw;
+        color: #D3D3D3;
+    }
+    
+    .filterGroup .filterBtn img{
+        height: 7vw;
+        width: 6vw;
+        filter: opacity(0.5);
+    }
+    
+    #filter{
+        color: #D3D3D3;
+        padding-top: 0;
+    }
+    
+     .directions{
+        display: none;
+    }
+
+    .carDot{
+        display: none;
+    }
+
+    .topContent{
+        margin-top: 7vw;
+        padding: 0 10.133vw;
+    }
+
+    .itemDetailSlideContainer{
+        display: flex;
+    }
+
+    .itemDetailSlideContainer .itemDetailsContainer{
+        width: 80vw;
+    }
+
+    .itemDetailSlideContainer .itemDetailsContainer .imageBox{
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+        display: grid;
+        grid-template-areas:
+        'item1 item1 item1 item1'
+        'item2 item3 item4 item5';
+        grid-gap: 5.333vw;
+    }
+
+    .itemDetailSlideContainer .itemDetailsContainer .imageBox img{
+        width: 100%;
+        height: 16vw;
+    }
+
+    .itemDetailSlideContainer .itemDetailsContainer .imageBox .item1 {
+        grid-area: item1;
+        height: 80vw;
+        width: 100%;
+        border-radius: 1.6vw;
+    }
+    
+    .itemDetailSlideContainer .itemDetailsContainer .imageBox .item2{
+        grid-area: item2;
+    }
+    
+    .itemDetailSlideContainer .itemDetailsContainer .imageBox .item3 {
+        grid-area: item3;
+    }
+    
+    .itemDetailSlideContainer .itemDetailsContainer .imageBox .item4 {
+        grid-area: item4;
+    }
+    
+    .itemDetailSlideContainer .itemDetailsContainer .imageBox .item5 {
+        grid-area: item5;
+    }
+
+    .itemDetailSlideContainer .itemDetailsContainer .itemDescription{
+        align-items: center;
+        margin-top: 5.333vw;
+        margin-bottom: 15.2vw;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .itemDetailSlideContainer .itemDetailsContainer .itemDescription div{
+        margin-bottom: 5.333vw;
+        /* width: 40vw; */
+        font-size: 3.4vw;
+        line-height: 5.333vw;
+    }
+
+    .itemDetailSlideContainer .itemDetailsContainer .itemDescription div:nth-of-type(1){
+        margin-right: 5vw;
+    }
+
+    .collections p{
+        font-size: 3.733vw;
+        line-height: 5.333vw;
+        margin-bottom: 2.4vw;
+    }
+}

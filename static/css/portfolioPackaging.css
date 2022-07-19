@@ -1,0 +1,11 @@
+.headerContent{
+    background-image: url(../img/Picture8.jpg);
+}
+
+/* MOBILE VIEW */
+
+@media only screen and (max-width: 600px) {
+    .headerContent{
+        background-image: url(../img/Picture8b.jpg);
+    }
+}

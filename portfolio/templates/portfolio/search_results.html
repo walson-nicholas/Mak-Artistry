@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Search {% endblock %}
+
+{%block head%}
+
+    <style>
+        .footer{
+            position: absolute;
+            width: 100%;
+        }
+
+        center{
+            margin-top: 15vw;
+        }
+
+        a{
+            color: -webkit-link;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* MOBILE VIEW */
+
+        @media only screen and (max-width: 600px)  {
+            .footer{
+                position: relative;
+            }
+
+            center{
+                margin-top: 25vw;
+                margin-bottom: 25vw;
+                padding: 0 5vw;
+            }
+
+            center h1{
+                font-size: 5vw;
+            }
+
+            center a{
+                font-size: 3vw;
+            }
+        }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+    <center>
+        {% if searched %}
+            <h1>You Searched for {{ searched|capfirst }}</h1>
+            <br>
+            
+            
+            {% for card in cards %}
+                <a href="{% url 'portfolio:card'  card.id %}">{{card}} - {{card.color}}</a><br><br>
+            {% endfor %}
+
+            {% for illustration in illustrations %}
+                <a href="{% url 'portfolio:illustration'  illustration.id %}">{{illustration}} - {{illustration.color}} </a><br><br>
+            {% endfor %}
+
+            {% for journal in journals %}
+                <a href="{% url 'portfolio:journal'  journal.id %}">{{journal}} - {{journal.color}} </a><br><br>
+            {% endfor %}
+
+            {% for package in packages %}
+                <a href="{% url 'portfolio:package'  package.id %}">{{package}} - {{package.color}} </a><br><br>
+            {% endfor %}
+        {% else %}
+            <h1>Hey! You didn't search for anything...</h1>
+        {% endif %}
+    </center>
+{% endblock %}
